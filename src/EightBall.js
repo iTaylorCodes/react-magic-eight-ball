@@ -12,10 +12,20 @@ const EightBall = ({ answers }) => {
     setColor(color);
   }
 
+  function reset() {
+    setMsg("Think of a Question");
+    setColor("black");
+  }
+
   return (
-    <div className="EightBall" onClick={handleClick} style={{ backgroundColor: color }}>
-      <p className="EightBall-msg">{msg}</p>
-    </div>
+    <>
+      <div className="EightBall" onClick={handleClick} style={{ backgroundColor: color }}>
+        <p className="EightBall-msg">{msg}</p>
+      </div>
+      <button className="EightBall-reset-btn" onClick={reset}>
+        Reset
+      </button>
+    </>
   );
 };
 
